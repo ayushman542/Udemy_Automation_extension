@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "Udemy Automatically Complete Courses",
+    "version": "0.0.3",
+    "description": "If I use this extension, will my course be automatically completed in 5 minutes with certificate !!",
+    "author": "Ayushman Medcalia",
+    "action": {
+        "default_popup": "./popup.html",
+        "default_icon": "./udemy.png",
+        "default_title": "Udemy Hack"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["./contentscript.js"]
+        }
+    ],
+    "icons": {
+        "128": "./udemy.png"
+    },
+    "background": {
+        "service_worker": "./background.js"
+    },
+    "permissions": [
+        "scripting",
+        "tabs",
+        "activeTab"
+    ]
+}
